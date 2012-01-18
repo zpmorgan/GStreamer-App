@@ -1,3 +1,6 @@
 *.swp
 *.xsc
+build
+Makefile
+MYMETA.*
 
