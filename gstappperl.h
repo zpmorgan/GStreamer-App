@@ -23,6 +23,8 @@
 
 #include <gst2perl.h>
 
+#include <gst/gstbuffer.h>
+
 #include <gst/app/gstappbuffer.h>
 #include <gst/app/gstappsink.h>
 #include <gst/app/gstappsrc.h>

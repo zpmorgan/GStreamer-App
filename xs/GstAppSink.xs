@@ -26,9 +26,26 @@ void gst_app_sink_set_drop (GstAppSink *appsink, gboolean drop);
 
 gboolean gst_app_sink_get_drop (GstAppSink *appsink);
 
-GstBuffer* gst_app_sink_pull_preroll           (GstAppSink *appsink);
-GstBuffer* gst_app_sink_pull_buffer            (GstAppSink *appsink);
-GstBufferList* gst_app_sink_pull_buffer_list       (GstAppSink *appsink);
+GstBuffer* gst_app_sink_pull_preroll (GstAppSink *appsink);
+
+GstBuffer* gst_app_sink_pull_buffer (GstAppSink *appsink);
+
+
+void
+gst_app_sink_pull_buffer_list (GstAppSink *appsink);
+   INIT:
+      int i;
+      int j;
+      GstBufferListIterator *it;
+      GstBufferList *buflist;
+      GstBuffer *buf;
+   CODE:
+      it = gst_buffer_list_iterate (buflist);
+      while (gst_buffer_list_iterator_next_group (it)) {
+         while ((buf = gst_buffer_list_iterator_next (it)) != NULL) {
+            XPUSHs( newSVGstBuffer (buf));
+         }
+      }
 
 #typedef struct {
 #   void          (*eos)              (GstAppSink *sink, gpointer user_data);
