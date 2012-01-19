@@ -34,6 +34,7 @@ my $testfile = File::Spec->rel2abs ('test.avi');
 #   $player->set_state('paused');
    my @state = $player->get_state(-1);
    is ($state[0],'success', 'playbin2 is fine.');
-  die $audio_sink->pull_preroll();
+   my @buflist = $audio_sink->pull_buffer_list();
+   diag scalar @buflist;
 }
 

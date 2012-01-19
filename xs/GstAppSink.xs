@@ -2,7 +2,7 @@
 
 #include "gstappperl.h"
 
-MODULE = GStreamer::AppSink PACKAGE = GStreamer::AppSink PREFIX = gst_app_sink
+MODULE = GStreamer::AppSink PACKAGE = GStreamer::AppSink PREFIX = gst_app_sink_
 
 #void                gst_app_sink_set_caps               (GstAppSink *appsink,
 #                                                         const GstCaps *caps);
@@ -40,6 +40,7 @@ gst_app_sink_pull_buffer_list (GstAppSink *appsink);
       GstBufferList *buflist;
       GstBuffer *buf;
    CODE:
+      buflist = gst_app_sink_pull_buffer_list(appsink);
       it = gst_buffer_list_iterate (buflist);
       while (gst_buffer_list_iterator_next_group (it)) {
          while ((buf = gst_buffer_list_iterator_next (it)) != NULL) {
