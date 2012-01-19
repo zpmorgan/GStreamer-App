@@ -2,3 +2,5 @@
 GST_TYPE_APP_SINK   GstAppSink   GObject  GStreamer::AppSink
 GST_TYPE_APP_SRC   GstAppSrc     GObject  GStreamer::AppSrc
 
+GST_TYPE_APP_STREAM_TYPE GstAppStreamType GEnum GStreamer::AppStreamType
+
