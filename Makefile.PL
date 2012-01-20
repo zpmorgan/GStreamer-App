@@ -72,8 +72,6 @@ $gst->add_typemaps(map {File::Spec->catfile(cwd(), $_)}
                        ('build/gstappperl.typemap'));
 
 my $gd = ExtUtils::Depends::load('GStreamer');
-#die join ',',@{$gd->{typemaps}};
-#die join "\n",%$gd;
 
 $gst->install(qw(gstappperl.h
                  build/gstappperl-autogen.h

@@ -4,14 +4,10 @@
 
 MODULE = GStreamer::AppSink PACKAGE = GStreamer::AppSink PREFIX = gst_app_sink_
 
-#void                gst_app_sink_set_caps               (GstAppSink *appsink,
-#                                                         const GstCaps *caps);
 void gst_app_sink_set_caps (GstAppSink *appsink ,const GstCaps *caps);
 
-#GstCaps *           gst_app_sink_get_caps               (GstAppSink *appsink);
 GstCaps *gst_app_sink_get_caps (GstAppSink *appsink);
 
-#gboolean            gst_app_sink_is_eos                 (GstAppSink *appsink);
 gboolean gst_app_sink_is_eos (GstAppSink *appsink);
 
 void gst_app_sink_set_emit_signals (GstAppSink *appsink, gboolean emit);
